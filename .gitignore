@@ -1,0 +1,6 @@
+/.env
+/.idea
+/vendor
+/node_modules
+/config/license.key
+.DS_Store

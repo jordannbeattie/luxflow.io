@@ -1,0 +1,32 @@
+{# Set base class #}
+{% set class = " btn" %}
+
+{# Set the Type #}
+{% set type = type ?? (type ?? "filled") %}
+{% switch type %}
+    {% case "filled" %}{% set class = class ~ " btn-filled " %}
+    {% case "line" %}{% set class = class ~ " btn-line " %}
+    {% case "link" %}{% set class = class ~ " btn-link " %}
+{% endswitch %}
+
+{# Set the Size #}
+{% set size = size ?? (size ?? "md") %}
+{% switch size %}
+    {% case "sm" %}{% set class = class ~ " btn-sm " %}
+    {% case "md" %}{% set class = class ~ " btn-md " %}
+    {% case "lg" %}{% set class = class ~ " btn-lg " %}
+{% endswitch %}
+
+{# Set the Colour #}
+{% set colour = colour ?? (color ?? "primary") %}
+{% switch colour %}
+    {% case "primary" %}{% set class = class ~ "btn-primary" %}
+    {% case "secondary" %}{% set class = class ~ "btn-secondary" %}
+    {% case "light" %}{% set class = class ~ "btn-light" %}
+    {% case "neutral" %}{% set class = class ~ "btn-neutral" %}
+{% endswitch %}
+
+{# Output button #}
+<a href="{{ url ?? "#" }}" class="{{ class }}" {% if (newWindow ?? false) %}target="_blank"{% endif %}>
+    {{ text ?? "Learn more" }}
+</a>

@@ -1,0 +1,43 @@
+{% extends "_layouts/default" %}
+{% set hideNav, hideFooter, hideControlBar = true, true, true %}
+
+{% block content %}
+    <div class="wrapper" x-data="{ sidebar:{{ 
+            getenv( 'STYLEGUIDE_SIDEBAR' ) == 'hide'
+            ? 'false'
+            : 'true'    
+        }}, toggleSidebar(){ this.sidebar = ! this.sidebar } }">
+
+        {# Sidebar #}
+        {% x:styleguide/sidebar { headline: "Blocks" } %}
+            {% if block('sidebaritems') is defined and block('sidebaritems') is not empty %}
+                {{ block('sidebaritems') }}
+            {% endif %}
+        {% endx:styleguide/sidebar %}
+
+        <div :class="{ 'md:pl-64': sidebar }">
+            <div class="flex flex-col flex-1">
+
+                <div class="flex flex-col py-12">
+
+                    {# Styleguide components #}
+                    {% if block('components') is defined and block('components') is not empty %}
+                        {{ block('components') }}
+                    {% endif %}
+                    
+                </div>
+
+                {# Blocks Area #}
+                <main id="BlocksArea">
+
+                    {% if block('blocks') is defined and block('blocks') is not empty %}
+                        {{ block('blocks') }}
+                    {% endif %}
+
+                </main>
+
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% set url = node.url ?? "#" %}
+{% set label = node.title ?? "Page" %}
+{% set newWindow = node.newWindow ?? false %}
+{% set attributes = node.customAttributes ?? null %}
+
+<li>
+    <a href="{{ url }}" {% if newWindow %} target="_blank" {% endif %} {% for attribute, value in attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+        {{ label }}
+    </a>
+</li>

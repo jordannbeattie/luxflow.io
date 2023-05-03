@@ -1,0 +1,30 @@
+{% if media is defined and media is not empty %}
+    
+    {# Set atom path #}
+    {% set path = 'media/' ~ media.kind %}
+
+    {# Set class #}
+    {% set class = class ?? '' %}
+
+    {% if media.kind == "image" %}
+        
+        {% set class = imageClass ?? class %}
+
+    {% elseif media.kind == "video" %}
+
+        {% set class = videoClass ?? class %}
+
+    {% elseif media.kind == "json" %}
+
+        {% set class = embedClass ?? class %}
+
+    {% endif %}
+    
+    {# Include atom #}
+    {% x:[path] {
+        media       : media, 
+        class       : class ?? null, 
+        transform   : transform ?? null
+    } %}
+
+{% endif %}

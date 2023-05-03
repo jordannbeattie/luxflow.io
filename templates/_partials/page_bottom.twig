@@ -1,0 +1,16 @@
+    
+    <!-- Back to Top Button -->
+    <a href="#0" class="fixed z-50 grid w-10 h-10 rounded-full shadow-sm shadow-neutral-900/50 transition BackToTop bottom-4 right-4 bg-neutral-50 place-items-center">
+        <svg class="Icon text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </a>
+
+    <!-- Js Files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    {% if scripts is defined and scripts is not empty %}
+        {{ scripts }}
+    {% endif %}
+
+</body>
+</html>

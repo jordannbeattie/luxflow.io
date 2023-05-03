@@ -1,0 +1,41 @@
+field: 64286a3d-abda-4015-acb6-fdd84a52c3e7 # Content Blocks
+fieldLayouts:
+  f77b6b6e-7381-493f-9bb0-81c2f4e5b935:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 116e4376-8da0-4496-9c87-73c2945e25a9 # Anchor
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  116e4376-8da0-4496-9c87-73c2945e25a9: # Anchor
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchor
+    instructions: 'Cannot include spaces or special characters.'
+    name: Anchor
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: anchor
+name: Anchor
+sortOrder: 7

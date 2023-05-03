@@ -1,0 +1,17 @@
+<div class="ListBlock">
+
+	{% if block.headline is defined and block.headline is not empty %}
+		<h2>{{ block.headline }}</h2>
+	{% endif %}
+
+	{% if block.copy is defined and block.copy is not empty %}
+	    {{ block.copy }}
+	{% endif %}
+
+	{% if block.items is defined and block.items is not empty %}
+		{% for item in block.items.all() %}
+			<li>{{ item.copy }}</li>
+		{% endfor %}
+	{% endif %}
+
+</div>

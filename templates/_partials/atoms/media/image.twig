@@ -1,0 +1,8 @@
+{% if media is defined and media is not empty %}
+    
+    {{ craft.images.render( media, {
+        class       : class ?? null, 
+        transform   : transform ?? null
+    }) }}
+
+{% endif %}

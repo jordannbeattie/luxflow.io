@@ -1,0 +1,15 @@
+<div class="ImageBlock">
+
+	{% if block.headline is defined and block.headline is not empty %}
+		<h2>{{ block.headline }}</h2>
+	{% endif %}
+
+	{% if block.copy is defined and block.copy is not empty %}
+	    {{ block.copy }}
+	{% endif %}
+
+	{% if block.image is defined and block.image is not empty %}
+		{{ craft.images.render(block.image) }}
+	{% endif %}
+
+</div>

@@ -1,0 +1,25 @@
+/*
+ * Input
+ */
+ 
+@layer utilities {
+
+    // Textbox Label
+    .input-label { @apply block font-semibold body-lg text-neutral-600 dark:text-neutral-200; }
+
+    // Textbox and Textarea
+    .input-text { @apply block w-full px-4 py-3 transition border rounded-none bg-neutral-50 dark:bg-neutral-700 body-sm text-neutral-500 dark:text-neutral-300 border-neutral-200 dark:border-neutral-600 focus:border-primary-300 dark:focus:border-primary-300 focus:ring-0 hover:border-primary-200 dark:hover:border-primary-200 active:transition-none active:bg-primary-50 dark:active:bg-primary-900; }
+
+    // Dropdown
+    .input-dropdown { @apply block w-full px-4 py-3 transition border rounded-none bg-neutral-50 dark:bg-neutral-700 body-sm text-neutral-500 dark:text-neutral-300 border-neutral-200 dark:border-neutral-600 focus:border-primary-300 dark:focus:border-primary-300 focus:ring-0 hover:border-primary-200 dark:hover:border-primary-200 active:transition-none active:bg-primary-50 dark:active:bg-primary-900; }
+
+    // Checkbox
+    .input-checkbox { @apply w-6 h-6 transition border rounded-none bg-neutral-50 dark:bg-neutral-700 border-neutral-200 dark:border-neutral-600 checked:bg-primary-300 checked:hover:bg-primary-400 checked:hover:border-primary-300 dark:checked:hover:border-primary-300 dark:checked:hover:bg-primary-400 dark:checked:bg-primary-300 checked:border-primary-200 dark:checked:border-primary-600 focus:ring-primary-400/25 focus:checked:bg-primary-300 dark:focus:checked:bg-primary-300 focus:ring-2 hover:border-primary-200 dark:hover:border-primary-200 active:transition-none active:ring-2 active:ring-primary-400/50 dark:active:ring-primary-400/50; }
+
+    // Radio Button
+    .input-radio { @apply w-6 h-6 transition border rounded-full bg-neutral-50 dark:bg-neutral-700 border-neutral-200 dark:border-neutral-600 checked:bg-primary-300 checked:hover:bg-primary-400 checked:hover:border-primary-300 dark:checked:hover:border-primary-300 dark:checked:hover:bg-primary-400 dark:checked:bg-primary-300 checked:border-primary-200 dark:checked:border-primary-600 focus:ring-primary-400/25 focus:checked:bg-primary-300 dark:focus:checked:bg-primary-300 focus:ring-2  hover:border-primary-200 dark:hover:border-primary-200 active:transition-none active:ring-2 active:ring-primary-400/50 dark:active:ring-primary-400/50; }
+    
+    // Selector Label
+    .input-selector-label { @apply body-md text-neutral-600 dark:text-neutral-200; }
+
+}

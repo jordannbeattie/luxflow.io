@@ -1,0 +1,50 @@
+{% set center   = center   ?? false %}
+{% set light    = light    ?? false %}
+{% set headline = headline ?? null  %}
+{% set copy     = copy     ?? null  %}
+{% set buttons  = buttons  ?? null  %}
+
+{% if headline is not empty or copy is not empty or buttons is not empty %}    
+    <div class="w-full mb-8 {{ center ? 'text-center' : '' }}">
+
+        {% if headline is defined and headline is not empty %}
+            <h2 class="h2 text-neutral-800 max-w-prose dark:text-primary-50">
+                {{ headline }}
+            </h2>
+        {% endif %}
+
+        {% if copy is defined and copy is not empty %}
+            <div class="mt-2 space-y-2 body-md text-neutral-500 copy max-w-prose dark:text-primary-100 {{ center ? 'mx-auto' : '' }}">
+                {{ copy }}
+            </div>
+        {% endif %}
+
+        {% if buttons is defined and buttons is not empty %}
+            <div class="flex flex-wrap gap-4 mt-4 sm:mt-6 {{ center ? 'justify-center' : '' }}">
+                {% for row in buttons.all() %}
+                    {% if loop.index is not even %}
+
+                        {% x:button {
+                            text: row.button.getText(),
+                            url: row.button.getUrl(), 
+                            newWindow: row.button.getTarget(),
+                            colour: "neutral"
+                        } %}
+
+                    {% else %}
+
+                        {% x:button {
+                            text: row.button.getText(),
+                            url: row.button.getUrl(), 
+                            newWindow: row.button.getTarget(),
+                            type: "line",
+                            colour: "neutral"
+                        } %}
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+{% endif %}

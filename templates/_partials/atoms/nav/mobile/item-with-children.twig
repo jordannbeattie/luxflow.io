@@ -1,0 +1,34 @@
+{% set url = node.url ?? "#" %}
+{% set label = node.title ?? "Page" %}
+{% set newWindow = node.newWindow ?? false %}
+{% set attributes = node.customAttributes ?? null %}
+
+<li x-data="{ expand: false, toggle(){ this.expand=!this.expand } }">
+
+    <a href="{{ url }}" {% if newWindow %} target="_blank" {% endif %} {% for attribute, value in attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+        {{ label }}
+    </a>
+
+    <div x-on:click="toggle()">
+        <span x-show="!expand">Open</span>
+        <span x-show="expand">Close</span>
+    </div>
+
+    <ul x-show="expand">
+        {% for child in node.children %}
+            
+            {% set url = child.url ?? "#" %}
+            {% set label = child.title ?? "Page" %}
+            {% set newWindow = child.newWindow ?? false %}
+            {% set attributes = child.customAttributes ?? null %}
+            
+            <li>
+                <a href="{{ url }}" {% if newWindow %} target="_blank" {% endif %} {% for attribute, value in attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+                    {{ label }}
+                </a>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+</li>

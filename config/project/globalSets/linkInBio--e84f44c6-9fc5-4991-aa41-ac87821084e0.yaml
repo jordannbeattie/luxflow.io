@@ -1,0 +1,19 @@
+fieldLayouts:
+  7fb7112f-7779-45d1-8a9f-8f99bd80b8ab:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0ec43b96-234e-442e-94d0-c51b18893a12 # Link-in-bio Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Links
+        sortOrder: 1
+handle: linkInBio
+name: 'Link in bio'
+sortOrder: 1

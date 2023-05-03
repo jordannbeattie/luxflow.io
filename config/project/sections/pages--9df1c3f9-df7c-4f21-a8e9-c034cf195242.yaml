@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: all
+siteSettings:
+  d6d70c7a-a269-4189-b17f-d94d3f2d788c: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/default
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 303398b9-0009-46b9-8079-398e4417bb40
+type: structure

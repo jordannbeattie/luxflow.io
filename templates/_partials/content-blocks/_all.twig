@@ -1,0 +1,25 @@
+{% if entry['contentBlocks'] is defined and entry['contentBlocks'] is not empty %}
+	{% for block in entry.contentBlocks.all() %}
+
+        {% set type = block.type %}
+
+        {% if block.type == "cardManual" %}
+            {% set type = "card" %}
+        {% endif %}
+		
+        {% if block['style'] is defined %}
+			
+            {% include [
+                '_partials/content-blocks/' ~ type ~ '_' ~ block.style,
+                '_partials/content-blocks/' ~ type ~ '_one',
+                '_partials/content-blocks/' ~ type,
+            ] ignore missing %}
+		
+        {% else %}
+			
+            {% include '_partials/content-blocks/' ~ type ignore missing %}
+		
+        {% endif %}
+
+	{% endfor %}
+{% endif %}

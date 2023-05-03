@@ -1,0 +1,21 @@
+{% if name is defined and name is not empty %}
+    
+    {% if ( heroicon ?? false ) %}
+
+        {{ craft.heroicons.icon({
+            name  : name,
+            class : class ?? null
+        }) }}
+
+    {% else %}
+    
+        {% set path = 'icons/' ~ name %}
+        {% x:[path] {
+            class: class ?? null
+        } %}
+        
+    {% endif %}
+    
+
+
+{% endif %}

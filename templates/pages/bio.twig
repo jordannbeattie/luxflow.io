@@ -1,0 +1,11 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+    {% if linkInBio.linkInBioLinks is defined and linkInBio.linkInBioLinks is not empty %}
+        {% for item in linkInBio.linkInBioLinks %}
+            {{ item.bioLink.getLink({
+                class: ''
+            }) }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+extends _layout.pug
+include blockheader.pug
+
+block links
+    +container()(class="flex gap-4")
+        - var blocks = ['Hero', 'Feature', 'Card']
+        each blockLink in blocks
+            include blocklink.pug
+
+block content
+    +blockheader('Hero')
+    +container-bgimage('https://placeimg.com/1900/500/tech/grayscale')(class="flex flex-col p-16 text-center justify-center text-white")
+        +headline()
+        +copy()
+        +btn() Learn more
+    +blockheader('Feature')
+    +container()
+        +grid()
+            .flex
+                +image('https://placeimg.com/500/500/tech/grayscale')
+            .flex.flex-col.p-4
+                +headline()
+                +copy()
+                +btn() Learn more
+    +blockheader('Card')
+    +container()
+        +headline()
+        +copy()
+        +grid-3()
+            +card('Card one', 'All the text', 'https://placeimg.com/500/500/tech/grayscale')
+            +card()
+            +card('Card one', 'All the text', 'https://placeimg.com/500/500/tech/grayscale')

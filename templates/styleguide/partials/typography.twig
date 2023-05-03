@@ -1,0 +1,74 @@
+{% x:styleguide/section { headline: 'Typography' } %}
+	<div class="flex flex-col gap-8 xl:gap-16 xl:flex-col">
+		
+		{# Heading Fonts #}
+		{% if heading is defined and heading is not empty %}
+			<div class="flex flex-col gap-2">
+				<div class='mb-6 text-2xl font-bold md:text-4xl font-heading text-neutral-800 dark:text-neutral-100'>
+					Headings:
+					<span class="font-bold">
+						{{ heading }}
+					</span>
+				</div>
+				<h1 class=' h1 text-neutral-700 dark:text-neutral-200'>Heading 1 - 60px</h1>
+				<h2 class=' h2 text-neutral-700 dark:text-neutral-200'>Heading 2 - 48px</h2>
+				<h3 class=' h3 text-neutral-700 dark:text-neutral-200'>Heading 3 - 36px</h3>
+				<h4 class=' h4 text-neutral-700 dark:text-neutral-200'>Heading 4 - 30px</h4>
+				<h5 class=' h5 text-neutral-700 dark:text-neutral-200'>Heading 5 - 24px</h5>
+				<h6 class=' h6 text-neutral-700 dark:text-neutral-200'>Heading 6 - 18px</h6>
+			</div>
+		{% endif %}
+
+		{# Body Fonts #}
+		{% if body is defined and body is not empty %}
+			<div class="flex flex-col gap-2">
+			
+				<div class='mb-6 font-sans text-2xl font-bold md:text-4xl text-neutral-800 dark:text-neutral-100'>
+					Body:
+					<span class="font-normal">
+						{{ body }}
+					</span>
+				</div>
+
+				<div class="flex flex-col flex-wrap gap-8 sm:flex-row sm:gap-12 lg:gap-16">
+
+					{# Regular #}
+					<div class="space-y-2">
+						<p class='body-2xl text-neutral-700 dark:text-neutral-200'>Body 2xl - 24px</p>
+						<p class='body-xl text-neutral-700 dark:text-neutral-200'>Body xl - 20px</p>
+						<p class='body-lg text-neutral-700 dark:text-neutral-200'>Body lg - 18px</p>
+						<p class='body-md text-neutral-700 dark:text-neutral-200'>Body md - 16px</p>
+						<p class='body-sm text-neutral-700 dark:text-neutral-200'>Body sm - 14px</p>
+						<p class='body-xs text-neutral-700 dark:text-neutral-200'>Body xs - 12px</p>
+						<p class='body-2xs text-neutral-700 dark:text-neutral-200'>Body 2xs - 10px</p>
+					</div>
+
+					{# Semibold #}
+					<div class="space-y-2">
+						<p class='font-semibold body-2xl text-neutral-700 dark:text-neutral-200'>Semi 2xl - 24px<p>
+						<p class='font-semibold body-xl text-neutral-700 dark:text-neutral-200'>Semi xl - 20px</p>
+						<p class='font-semibold body-lg text-neutral-700 dark:text-neutral-200'>Semi lg - 18px</p>
+						<p class='font-semibold body-md text-neutral-700 dark:text-neutral-200'>Semi md - 16px</p>
+						<p class='font-semibold body-sm text-neutral-700 dark:text-neutral-200'>Semi sm - 14px</p>
+						<p class='font-semibold body-xs text-neutral-700 dark:text-neutral-200'>Semi xs - 12px</p>
+						<p class='font-semibold body-2xs text-neutral-700 dark:text-neutral-200'>Semi 2xs - 10px</p>
+					</div>
+
+					{# Bold #}
+					<div class="space-y-2">
+						<p class='font-bold body-2xl text-neutral-700 dark:text-neutral-200'>Bold 2xl - 24px</p>
+						<p class='font-bold body-xl text-neutral-700 dark:text-neutral-200'>Bold xl - 20px</p>
+						<p class='font-bold body-lg text-neutral-700 dark:text-neutral-200'>Bold lg - 18px</p>
+						<p class='font-bold body-md text-neutral-700 dark:text-neutral-200'>Bold md - 16px</p>
+						<p class='font-bold body-sm text-neutral-700 dark:text-neutral-200'>Bold sm - 14px</p>
+						<p class='font-bold body-xs text-neutral-700 dark:text-neutral-200'>Bold xs - 12px</p>
+						<p class='font-bold body-2xs text-neutral-700 dark:text-neutral-200'>Bold 2xs - 10px</p>
+					</div>
+
+				</div>
+
+			</div>
+		{% endif %}
+
+	</div>
+{% endx:styleguide/section %}

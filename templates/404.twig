@@ -1,0 +1,8 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+	{% include '_partials/content-blocks/text' with { block: {
+		headline: "404: Page not found",
+		copy: "The page you were looking for could not be found."
+	}} %}
+{% endblock %}

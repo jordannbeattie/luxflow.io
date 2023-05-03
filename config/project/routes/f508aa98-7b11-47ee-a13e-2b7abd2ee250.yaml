@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 1
+template: pages/bio
+uriParts:
+  - bio
+uriPattern: bio

@@ -1,0 +1,52 @@
+{% x:block { name: 'CardBlock', background: 'bg-neutral-50' } %}
+    
+    {% if (block['headline'] is defined and block['headline'] is not empty) or 
+            (block['copy'] is defined and block['copy'] is not empty) or 
+            (block['buttons'] is defined and block['buttons'] is not empty) %}
+        <div class="mb-8 lg:mb-12">
+            {% x:block-heading {
+                headline: block['headline'] ?? null, 
+                copy: block['copy'] ?? null,
+                buttons: block['buttons'] ?? null
+            } %}
+        </div>
+    {% endif %}
+    
+    {# Set the Cards Per Row #}
+    {% set cardsPerRow = block['cardsPerRow'] ?? "3" %}
+
+    {# Card Size #}
+    {% if cardsPerRow == "2" %}{% set cardSize = "lg" %}
+    {% elseif cardsPerRow == "3" %}{% set cardSize = "md" %}
+    {% else %}{% set cardSize = "sm" %}{% endif %}
+
+    {# Cards Block #}
+    {% if block['cards'] is defined and block['cards'] is not empty %}
+        <div class="grid gap-8 sm:grid-cols-2 {{ cardsPerRow == "2" ? " xl:gap-16 " }} {{ cardsPerRow == "3" ? " xl:gap-12 xl:grid-cols-3 " }} {{ cardsPerRow == "4" ? " xl:gap-8 lg:grid-cols-3 xl:grid-cols-4 " }}">
+            {% for card in block.cards.all() %}
+                {% if ( block['type'] ?? 'card' ) == "card_manual" %}
+                    
+                    {% x:cards/one {
+                        image: card['cardImage'] ?? null, 
+                        headline: card['cardTitle'] ?? null, 
+                        copy: card['cardCopy'] ?? null, 
+                        url: card.cardButton.getUrl() ?? null,
+                        size: cardSize
+                    } %}
+
+                {% else %}
+
+                    {% x:cards/one {
+                        image: card['image'] ?? null, 
+                        headline: card['title'] ?? null, 
+                        copy: card['summary'] ?? null, 
+                        url: card['url'] ?? null,
+                        size: cardSize
+                    } %}
+                    
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+{% endx:block %}

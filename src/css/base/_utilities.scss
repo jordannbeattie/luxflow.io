@@ -1,0 +1,38 @@
+/* for AlpineJs */
+[x-cloak] {
+    display: none !important;
+}
+
+@layer utilities {
+
+    /* Text Shadow */
+    .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.10) }
+    .text-shadow-md { text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08) }
+    .text-shadow-lg { text-shadow: 0 15px 30px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08) }
+    .text-shadow-none { text-shadow: none }
+
+    // Header block
+    .header__block {
+		@apply grid place-items-center max-w-md mx-auto text-neutral-600 gap-x-4;
+	}
+
+    // Hero Container
+    .container {
+
+        @apply p-6 sm:p-8 lg:p-12 lg:py-16;
+
+        &-hero {
+            @apply container max-w-screen-2xl mx-auto xl:px-16;
+        }
+    
+        // Block Container
+        &-block {
+            @apply container max-w-screen-xl mx-auto;
+        }
+    }
+
+    // Google Maps
+    .gm-map {
+        @apply w-full h-full;
+    }
+}

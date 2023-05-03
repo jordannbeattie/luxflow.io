@@ -1,0 +1,205 @@
+field: 64286a3d-abda-4015-acb6-fdd84a52c3e7 # Content Blocks
+fieldLayouts:
+  395b1ee1-b1b3-4674-94e0-e439ee44202c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 763eeeef-beff-4e20-857a-bd9871d41a53 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f6898798-e4d6-4697-9aad-5d6c70026f37 # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 91887238-d456-4a4e-ab19-e0ec34181531 # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc732253-c7cf-4854-b533-1c2211f8b794 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1210e51f-a698-42cb-86f8-7b3b0fdd8ba1 # Media Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  763eeeef-beff-4e20-857a-bd9871d41a53: # Headline
+    columnSuffix: pzvpbqof
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1210e51f-a698-42cb-86f8-7b3b0fdd8ba1: # Media Position
+    columnSuffix: ywauzldi
+    contentColumnType: string
+    fieldGroup: null
+    handle: mediaPosition
+    instructions: ''
+    name: 'Media Position'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  91887238-d456-4a4e-ab19-e0ec34181531: # Buttons
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttons
+    instructions: ''
+    name: Buttons
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 0764eec9-0e81-4274-8e76-03ef46ae7f4f # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_6_buttons}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a button'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  bc732253-c7cf-4854-b533-1c2211f8b794: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:d16c11fe-e37d-4ac7-a989-1a53c3782161' # Cloud Files
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:d16c11fe-e37d-4ac7-a989-1a53c3782161' # Cloud Files
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f6898798-e4d6-4697-9aad-5d6c70026f37: # Copy
+    columnSuffix: mrajsbbk
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: feature
+name: Feature
+sortOrder: 4

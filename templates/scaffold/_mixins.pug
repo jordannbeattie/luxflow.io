@@ -1,0 +1,85 @@
+//layout
+mixin container()
+    .container.relative.max-w-screen-xl.px-4.py-8.mx-auto&attributes(attributes)
+        block
+
+mixin container-bgimage(src)
+    .container.relative.max-w-screen-xl.px-4.py-8.mx-auto(style=`background-image: url('${src}')`)&attributes(attributes)
+        block
+
+mixin grid()
+    .grid.grid-cols-2
+        block
+
+mixin grid-3()
+    .grid.grid-cols-3
+        block
+
+mixin grid-4()
+    .grid.grid-cols-4
+        block
+
+//components
+
+mixin headline()
+    h1.head-h1 This is a headline
+
+mixin copy()
+    p.body-md This is copy
+
+mixin btn()
+  a.btn
+    block
+
+mixin avatar(src, alt)
+  img.h-10.w-10.rounded-full(src=src alt=alt)
+
+mixin image(src, alt)
+  img.object-cover.w-full.h-full(src=src alt=alt)
+
+mixin card(title, summary, url)
+   - title = title || 'Card name'
+   - summary = summary || 'The summary'
+   - url = url || 'https://placeimg.com/600/600/tech/grayscale'
+   .flex.items-center
+    .flex-shrink-0.h-10.w-10
+      +image(url,title)
+    .ml-4
+      .text-sm.font-medium.text-gray-900
+        | #{title}
+      .text-sm.text-gray-500
+        | #{summary}
+      .flex
+        +btn() Learn more
+
+
+mixin list()
+    block
+
+mixin quote()
+    block
+
+mixin accordion()
+    block
+
+mixin form()
+    block
+
+
+mixin table()
+  .flex.flex-col
+    .-my-2.overflow-x-auto(class='sm:-mx-6 lg:-mx-8')
+      .py-2.align-middle.inline-block.min-w-full(class='sm:px-6 lg:px-8')
+        .shadow.overflow-hidden.border-b.border-gray-200(class='sm:rounded-lg')
+          table.min-w-full.divide-y.divide-gray-200
+            block
+
+//options
+mixin style()
+    block
+
+mixin theme()
+    block
+
+mixin mediaposition()
+    block

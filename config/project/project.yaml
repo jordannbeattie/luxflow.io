@@ -1,0 +1,134 @@
+dateModified: 1675685904
+email:
+  fromEmail: $MAIL_FROM_EMAIL
+  fromName: $MAIL_FROM_NAME
+  replyToEmail: $MAIL_FROM_EMAIL
+  template: null
+  transportSettings:
+    encryptionMethod: $MAIL_PROTOCOL
+    host: $MAIL_HOST
+    password: $MAIL_PASSWORD
+    port: $MAIL_PORT
+    timeout: '10'
+    useAuthentication: $MAIL_AUTH
+    username: $MAIL_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
+meta:
+  __names__:
+    0dee448f-00ea-4e52-bc59-ec307d4c6b7f: 'Primary Navigation' # Primary Navigation
+    0ec43b96-234e-442e-94d0-c51b18893a12: 'Link-in-bio Links' # Link-in-bio Links
+    1ad6334a-561e-4afc-80de-1d4d0f2d3229: Summary # Summary
+    1e6503ce-1874-499c-ac7a-3b92d3d0292a: Common # Common
+    2a0571e3-8ecb-46fc-86f1-667fab82405c: SEO # SEO
+    02e081d3-78e5-4dca-b3c8-07866b30ad01: Button # Button
+    2ec7c7ab-443a-47cd-ae26-923a25339dc1: Headline # Headline
+    3e6a5880-c066-46c5-a8c1-b94edd8a3a28: Button # Button
+    6a4b9a4b-2826-4e8a-a241-207b54505996: Headline # Headline
+    6f6fae4f-e59e-4fdc-9854-ad12e2301523: Button # Button
+    8c0f79bc-8f53-4628-b786-8d430aacc874: Buttons # Buttons
+    8d283175-641b-464a-ae68-7d0513252808: Copy # Copy
+    9df1c3f9-df7c-4f21-a8e9-c034cf195242: Pages # Pages
+    13e32631-20b2-4c89-9eb0-8e08086c0732: Copy # Copy
+    25caa8cf-602e-4bd9-a78b-5123a55c9de7: 'Card (Manual)' # Card (Manual)
+    26a2f3c6-7268-458a-8fa1-dd9f185d5cdf: Buttons # Buttons
+    28c471b6-f9c0-47ae-b77c-d6f2d1b46442: Copy # Copy
+    62ede65a-7718-438f-8379-f63eebc5c864: Anchor # Anchor
+    96b6056b-d2f7-46b9-a2b1-9fb7bfbead76: Form # Form
+    107b376a-da5e-45ed-ab87-8a1f88124d69: Default # Default
+    116e4376-8da0-4496-9c87-73c2945e25a9: Anchor # Anchor
+    763eeeef-beff-4e20-857a-bd9871d41a53: Headline # Headline
+    0764eec9-0e81-4274-8e76-03ef46ae7f4f: Button # Button
+    941b54ca-fa78-4aba-a0e7-c8ea0b9ee389: Button # Button
+    1210e51f-a698-42cb-86f8-7b3b0fdd8ba1: 'Media Position' # Media Position
+    22879b2d-c513-40dc-86a1-da6c5c5901eb: Homepage # Homepage
+    64286a3d-abda-4015-acb6-fdd84a52c3e7: 'Content Blocks' # Content Blocks
+    71527a6f-074d-41ac-acbb-1b3581bf3938: Copy # Copy
+    992302cf-d8ac-4684-8488-1bfaf020bf5e: Buttons # Buttons
+    91887238-d456-4a4e-ab19-e0ec34181531: Buttons # Buttons
+    a7f1cbe3-ef4b-4d57-90bd-46f142345344: Headline # Headline
+    a9ed9ec2-c297-4bfd-8361-a5385e2139ea: Buttons # Buttons
+    a96b4f32-f496-4e8b-b50b-cea263e93da5: Button # Button
+    aad5d3c2-e327-43ba-bce0-0e72aadc631d: Hero # Hero
+    adc3ce14-b18c-4644-b669-727364548afd: $SITE_NAME # $SITE_NAME
+    b19d4041-504c-477c-b5f1-3e158a503a3f: Feature # Feature
+    b936908b-9f03-4fa4-937a-f6531987fa03: Card # Card
+    bc732253-c7cf-4854-b533-1c2211f8b794: Image # Image
+    c4834d8d-2e08-4de5-8b12-00a1277c2d2b: Homepage # Homepage
+    c8302baf-d262-4411-9377-f574748f37b8: Image # Image
+    cad8632b-f23c-4ff2-ad92-0f541b292701: Copy # Copy
+    cd32edba-450b-4dc8-b0f0-298d905efc13: Link # Link
+    cf057948-8c1c-43ed-afd7-67e1ceba7363: Link # Link
+    d3a958d1-fca4-4134-9dac-2dfde83fcff7: Headline # Headline
+    d5ef908c-7b7a-4659-9415-1832594ca96e: Cards # Cards
+    d6d70c7a-a269-4189-b17f-d94d3f2d788c: $SITE_NAME # $SITE_NAME
+    d8ac6dee-eb02-4ffb-89e5-e2fd7fa9c3ee: Cards # Cards
+    d16c11fe-e37d-4ac7-a989-1a53c3782161: 'Cloud Files' # Cloud Files
+    dbc4c592-afdb-4421-a3b5-6bebedd21c1c: 'Call To Actions' # Call To Actions
+    de1e22e5-fa6c-4c7d-bbb2-d4d62a99fc0f: Headline # Headline
+    e68e9282-5576-414b-97db-5af34362b556: Default # Default
+    e84f44c6-9fc5-4991-aa41-ac87821084e0: 'Link in bio' # Link in bio
+    f3b895ab-1000-4c04-b882-109ea8a06527: Text # Text
+    f4cb304f-2763-4e4f-ae45-a77ec44c3fd5: Title # Title
+    f64d0b4c-fb82-4b48-8b94-1153cc2c830c: Globals # Globals
+    f6898798-e4d6-4697-9aad-5d6c70026f37: Copy # Copy
+plugins:
+  atom:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
+  dashboard-begone:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  faker:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      source: $FAKER_IMG_SRC
+  image-optimization:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: D1VR833TXDARXVIH79IACE5D
+    schemaVersion: 1.0.21
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: $SITE_NAME
+  retryDuration: null
+  schemaVersion: 3.7.33
+  timeZone: Europe/London
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

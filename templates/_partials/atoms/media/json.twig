@@ -1,0 +1,11 @@
+{% if media is defined and media is not empty %}
+    
+    {% set url = craft.embeddedAssets
+        .get( media ).getVideoUrl([
+            'autoplay=0', 'controls=0', 'playsinline=1', 'rel=0'
+        ]) 
+    %}
+
+    <iframe src="{{ url }}" frameborder="0" class="{{ class ?? '' }}"></iframe>
+
+{% endif %}

@@ -1,0 +1,41 @@
+<section class="TestBlock">
+    <div class="bg-white">
+        <div class="container-block">
+            
+            <div class="w-full">
+
+                {# Headline #}
+                {% if block.headline is defined and block.headline is not empty %}
+                    <h2 class="mb-2 lg:mb-4 h3 text-neutral-800 max-w-prose">
+                        {{ block.headline }}
+                    </h2>
+                {% endif %}
+
+                {# Copy #}
+                {% if block.copy is defined and block.copy is not empty %}
+                    <div class="space-y-2 body-lg text-neutral-500 copy max-w-prose">
+                        {{ block.copy }}
+                    </div>
+                {% endif %}
+
+                {# Buttons #}
+                {% if block.buttons is defined and block.buttons is not empty %}
+                    <div class="mt-8">
+                        {% for row in block.buttons.all() %}
+                        
+                            {% x:button {
+                                url: row.button.getUrl(),
+                                text: row.button.getText(),
+                                newWindow: row.button.getTarget(),
+                                colour: "neutral"
+                            } %}
+                            
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+</section>

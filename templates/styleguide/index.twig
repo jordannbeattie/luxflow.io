@@ -1,0 +1,312 @@
+{% extends "styleguide/layout" %}
+
+{# Global Information #}
+{% set globals = {
+	general: {
+		copy: "This is the styleguide",
+        socialLinks: craft.faker.collection([
+            {
+                label: "Facebook page 1",
+                icon: "facebook",
+                socialURL: "#facebook-1"
+            },
+            {
+                label: "Facebook page 2",
+                icon: "facebook",
+                socialURL: "#facebook-2"
+            },
+            {
+                label: "Twitter page 1",
+                icon: "twitter",
+                socialURL: "#twitter-1"
+            },
+            {
+                label: "Website 1",
+                icon: "website",
+                socialURL: "#website-1"
+            },
+        ])
+	},
+	contact: {
+		phone: "01234 567890",
+		email: "contact@website.com",
+		address: [
+			{
+				addressLine: "Charlie House"
+			},
+			{
+				addressLine: "AB01 2CD"
+			}
+		],
+        socialLinks: craft.faker.supertable([
+            {
+                socialLinkUrl: '#',
+                label: 'Global Social Link 1',
+                icon: 'website'
+            },
+            {
+                socialLinkUrl: '#',
+                label: 'Global Social Link 2',
+                icon: 'facebook'
+            },
+            {
+                socialLinkUrl: '#',
+                label: 'Global Social Link 3',
+                icon: 'twitter'
+            },
+            {
+                socialLinkUrl: '#',
+                label: 'Global Social Link 4',
+                icon: 'website'
+            },
+        ])
+	},
+	navitems: craft.faker.navigation(3, true),
+    legalitems: craft.faker.navigation(3, false)
+} %}
+
+{# Global CTA #}
+{% set cta = craft.faker.collection([
+	craft.faker.entry({
+		headline: "CTA Headline",
+		copy: "CTA Copy",
+		buttons: craft.faker.supertable([
+			{
+				button: craft.faker.link({
+					url: "#",
+					text: "CTA Button"
+				})
+			},
+			{
+				button: craft.faker.link({
+					url: "#",
+					text: "CTA Button 2"
+				})
+			},
+		])
+	}).get()
+]) %}
+
+{# Style Tokens #}
+{% block components %}
+
+    {# Styleguide Header #}
+    {% include "styleguide/partials/header" %}
+
+    {# Colour Palettte #}
+    {% include "styleguide/partials/colour_palette" with {
+        neutral: "#123456",
+        primary: "#123456",
+        secondary: "#123456",
+        accent: {
+            default: "#123456",
+            extra: "#123456",
+        }
+    } %}
+
+    {# Typography #}
+    {% include "styleguide/partials/typography" with {
+        heading: "Heading Font Name", 
+        body: "Body Font Name",
+    } %}
+
+    {# Buttons #}
+    {% include "styleguide/partials/buttons" %}
+
+    {# Input Components #}
+    {% include "styleguide/partials/inputs" %}
+
+{% endblock %}
+
+{% block sidebaritems %}
+
+    {% x:styleguide/sidebar-item { copy: 'Test Block', link: 'TestBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Navigation', link: 'NavigationBlock', dynamic: true } %}
+    {% x:styleguide/sidebar-item { copy: 'Hero Block', link: 'HeroBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Card Block', link: 'CardBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Card Two Block', link: 'CardTwoBlock', dynamic: false, variation: true } %}
+    {% x:styleguide/sidebar-item { copy: 'CTA Block', link: 'CtaBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'FAQ Block', link: 'FaqBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Feature Block', link: 'FeatureBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Feature Two Block', link: 'FeatureTwoBlock', dynamic: false, variation: true } %}
+    {% x:styleguide/sidebar-item { copy: 'Form Block', link: 'FormBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Media Block', link: 'MediaBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Quote Block', link: 'QuoteBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Text Block', link: 'TextBlock', dynamic: false } %}
+    {% x:styleguide/sidebar-item { copy: 'Footer Block', link: 'Footer', dynamic: false } %}
+
+{% endblock %}
+
+{% block blocks %}
+
+    {# Test Block #}
+    {% x:styleguide/header { copy: 'Test Block', id: 'TestBlock' } %}
+    {% include "styleguide/blocks/test" with { block: {
+        headline: "Test Block",
+        copy: "Praesent non risus ultrices, efficitur odio at, rutrum felis. Duis sit amet rhoncus dolor, a pulvinar erat. Mauris id sagittis orci. Aenean tempus dui id magna ultrices mattis.",
+        buttons: craft.faker.supertable([{
+            button: craft.faker.link({ text: "Button" }),
+        }]),
+    }} %}
+
+    {# Navigation #}
+    {% x:styleguide/header { copy: 'Navigation', id: 'NavigationBlock' } %}
+    {% include "_partials/navigation" with {
+        primaryItems: craft.faker.navigation(3, true)
+    } %}
+
+    {# Hero Block #}
+    {% x:styleguide/header { copy: 'Hero Block', id: 'HeroBlock' } %}
+    {% include "styleguide/blocks/hero" with { block: {
+    }} %}
+
+    {# Card Block #}
+    {% x:styleguide/header { copy: 'Card Block', id: 'CardBlock' } %}
+    {% x:styleguide/header { copy: 'Card One Block', id: 'CardOneBlock', variation: true } %}
+    {% include "styleguide/blocks/card" with { block: {
+        headline: "Headline",
+        copy: "Copy",
+        buttons: craft.faker.supertable([
+            { button: craft.faker.link({ text: "Button 1" }) },
+            { button: craft.faker.link({ text: "Button 2" }) },
+        ]),
+        cardsPerRow: "3",
+        cards: craft.faker.collection([
+            {
+                title: "Card 1", 
+                url: "#card-1", 
+                summary: "Card 1 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+            {
+                title: "Card 2", 
+                url: "#card-2", 
+                summary: "Card 2 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+            {
+                title: "Card 3", 
+                url: "#card-3", 
+                summary: "Card 3 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+        ])
+    }} %}
+
+    {# Card Two Block #}
+    {% x:styleguide/header { copy: 'Card Two Block', id: 'CardTwoBlock', variation: true } %}
+    {% include "styleguide/blocks/card_two" with { block: {
+        headline: "Headline",
+        copy: "Copy",
+        buttons: craft.faker.supertable([
+            { button: craft.faker.link({ text: "Button 1" }) },
+            { button: craft.faker.link({ text: "Button 2" }) },
+        ]),
+        cardsPerRow: "4",
+        cards: craft.faker.collection([
+            {
+                title: "Card 1", 
+                url: "#card-1", 
+                summary: "Card 1 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+            {
+                title: "Card 2", 
+                url: "#card-2", 
+                summary: "Card 2 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+            {
+                title: "Card 3", 
+                url: "#card-3", 
+                summary: "Card 3 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            },
+            {
+                title: "Card 4", 
+                url: "#card-4", 
+                summary: "Card 4 summary",
+                image: craft.faker.collection([ craft.faker.asset({
+                    width: 480, 
+                    height: 256
+                }) ])
+            }
+        ])
+    }} %}
+
+    {# CTA Block #}
+    {% x:styleguide/header { copy: 'CTA Block', id: 'CtaBlock' } %}
+    {% include "styleguide/blocks/cta" with { block: {
+    }} %}
+
+    {# FAQ Block #}
+    {% x:styleguide/header { copy: 'FAQ Block', id: 'FaqBlock' } %}
+    {% include "styleguide/blocks/faq" with { block: {
+    }} %}
+
+    {# Feature Block #}
+    {% x:styleguide/header { copy: 'Feature Block', id: 'FeatureBlock' } %}
+    {% x:styleguide/header { copy: 'Feature One Block', id: 'FeatureOneBlock', variation: true } %}
+    {% include "styleguide/blocks/feature_one" with { block: {
+        headline: "Feature Block Title",
+        byline: "Short byline",
+        copy: "Donec vel auctor augue. Nulla metus sem, pellentesque ut cursus nec, dapibus ac arcu. Vivamus erat massa, posuere sit amet orci at, viverra hendrerit sem. Sed ut lacus in nulla posuere scelerisque sit amet eu nibh. Maecenas vel libero suscipit, bibendum urna vitae.",
+        mediaPosition: "left",
+        media: craft.faker.collection([ craft.faker.asset({
+            width: 640, 
+            height: 480
+        }) ]),
+        buttons: craft.faker.supertable([{
+            button: craft.faker.link({ text: "Learn More" }),
+        }]),
+    }} %}
+
+    {# Feature Two Block #}
+    {% x:styleguide/header { copy: 'Feature Two Block', id: 'FeatureTwoBlock', variation: true } %}
+    {% include "styleguide/blocks/feature_two" with { block: {
+    }} %}
+
+    {# Form Block #}
+    {% x:styleguide/header { copy: 'Form Block', id: 'FormBlock' } %}
+    {% include "styleguide/blocks/form" with { block: {
+    }} %}
+
+    {# Media Block #}
+    {% x:styleguide/header { copy: 'Media Block', id: 'MediaBlock' } %}
+    {% include "styleguide/blocks/media" with { block: {
+    }} %}
+
+    {# Quote Block #}
+    {% x:styleguide/header { copy: 'Quote Block', id: 'QuoteBlock' } %}
+    {% include "styleguide/blocks/quote" with { block: {
+    }} %}
+
+    {# Text Block #}
+    {% x:styleguide/header { copy: 'Text Block', id: 'TextBlock' } %}
+    {% include "styleguide/blocks/text" with { block: {
+    }} %}
+
+    {# Footer Block #}
+    {% x:styleguide/header { copy: 'Footer Block', id: 'FooterBlock' } %}
+    {% include "styleguide/blocks/footer" with { block: {
+    }} %}
+
+{% endblock %}

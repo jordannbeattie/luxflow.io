@@ -1,0 +1,70 @@
+{% set primaryItems = primaryItems ?? (craft.navigation.nodes('primaryNavigation') ?? null) %}
+
+{# Navigation #}
+<section class="NavBlock">
+    <div class="bg-white">
+        <div x-data="{mobileOpen: false, toggle(){ this.mobileOpen=!this.mobileOpen }}">
+
+            {# Desktop Nav #}
+            <div class="container p-6 mx-auto max-w-screen-2xl sm:p-8 lg:p-12 xl:px-16 xl:pt-12 xl:pb-0">
+                <div class="flex items-center justify-between space-x-6 lg:items-end xl:space-x-8">
+
+                    {# Logo #}
+                    {{ siteName }}
+
+                    {# Mobile Toggle #}
+                    <div class="md:hidden hover:cursor-pointer">
+                        <div x-on:click="toggle()">
+                            <span x-show="!mobileOpen">Open nav</span>
+                            <span x-show="mobileOpen">Close nav</span>
+                        </div>
+                    </div>
+
+                    {# Desktop Navigation #}
+                    <nav class="items-baseline hidden space-x-6 lg:flex xl:space-x-8">
+                        {% for node in primaryItems.all() %}
+                            
+                            {% if node.hasDescendants %}
+
+                                {% x:nav/desktop/item-with-children {
+                                    node: node
+                                } %}
+
+                            {% else %}
+
+                                {% x:nav/desktop/item {
+                                    node: node
+                                } %}
+
+                            {% endif %}
+
+                        {% endfor %}
+                    </nav>
+
+                </div>
+            </div>
+
+            {# Mobile Navigation #}
+            <nav class="prose md:hidden" x-show="mobileOpen">
+                {% for node in primaryItems.all() %}
+                    
+                    {% if node.hasDescendants %}
+
+                        {% x:nav/mobile/item-with-children {
+                            node: node
+                        } %}
+
+                    {% else %}
+
+                        {% x:nav/mobile/item {
+                            node: node
+                        } %}
+
+                    {% endif %}
+
+                {% endfor %}
+            </nav>
+
+        </div>
+    </div>
+</section>

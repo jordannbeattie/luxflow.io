@@ -1,0 +1,72 @@
+{# Classes for Small Card #}
+{% if size == "sm" %}
+    {% set card_padding = " lg:space-y-4 " %}
+    {% set card_image = " lg:h-44 xl:h-40 " %}
+    {% set card_title = " lg:body-lg " %}
+    {% set card_copy = " lg:body-sm " %}
+{# Classes for Medium Card #}
+{% elseif size == "md"  %}
+    {% set card_padding = " lg:space-y-6 " %}
+    {% set card_image = " lg:h-64 xl:h-56 " %}
+    {% set card_title = " lg:body-xl " %}
+    {% set card_copy = " lg:body-md " %}
+{# Classes for Large Card #}
+{% elseif size == "lg"  %}
+    {% set card_padding = " lg:space-y-8 " %}
+    {% set card_image = " lg:h-64 xl:h-80 " %}
+    {% set card_title = " lg:body-2xl " %}
+    {% set card_copy = " lg:body-lg " %}
+{% endif %}
+
+<div class="h-full space-y-4 flex flex-col {{ card_padding }}">
+
+    {# Card Image #}
+    {% if image is defined and image is not empty %}
+        {% if url is defined and url is not empty %}<a href="{{ url }}">{% endif %}
+            {{ craft.images.render(image, {
+                transform: {
+                    width: 480,
+                    height: 256
+                },
+                class: "object-cover bg-primary-100 w-full h-52 sm:h-48 rounded-none " ~ card_image,
+                alt: headline ?? null
+            }) }}
+        {% if url is defined and url is not empty %}</a>{% endif %}
+    {% endif %}
+
+    {# Card Body #}
+    <div class="flex flex-col items-start justify-between h-full">
+        <div class="flex flex-col items-start">
+
+            {# Card Headline #}
+            {% if headline is defined and headline is not empty %}
+                <h4 class="body-xl text-neutral-800  font-bold leading-snug tracking-tight {{ card_title }}">
+                    {{ headline }}
+                </h4>
+            {% endif %}
+
+            {# Card Copy #}
+            {% if copy is defined and copy is not empty %}
+                <div class="body-md space-y-2 text-neutral-600 grow mt-2 {{ card_copy }}">
+                    {{ copy }}
+                </div>			
+            {% endif %}
+
+        </div>
+
+        {# Card CTA Area #}
+        <div class="mt-4">
+            {% if url is defined and url is not empty %}
+                {% x:button {
+                    text: "Learn More",
+                    url: url ?? '#',
+                    type: "filled",
+                    colour: "neutral",
+                    size: ( size == "sm" ? "sm" : "md" ),
+                } %}
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>

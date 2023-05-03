@@ -1,0 +1,28 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: f64d0b4c-fb82-4b48-8b94-1153cc2c830c # Globals
+handle: linkInBioLinks
+instructions: ''
+name: 'Link-in-bio Links'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 3c19a2ac-4d02-4ee6-97d3-88b395a9d8e8
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_linkinbiolinks}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: 'Add a link'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

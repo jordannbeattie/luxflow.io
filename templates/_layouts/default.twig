@@ -1,0 +1,19 @@
+{% include "_partials/page_top" %}
+
+	{% if hideControlBar is not defined or (hideControlBar is defined and hideControlBar != true) %}
+		{% include '_partials/control_bar' %}
+	{% endif %}
+
+	{% if hideNav is not defined or (hideNav is defined and hideNav != true) %}
+		{% include "_partials/navigation" %}
+	{% endif %}
+
+	{% if block('content') is defined and block('content') is not empty %}
+		{{ block('content') }}
+	{% endif %}
+
+	{% if hideFooter is not defined or (hideFooter is defined and hideFooter != true) %}
+		{% include "_partials/footer" %}
+	{% endif %}
+
+{% include "_partials/page_bottom" %}

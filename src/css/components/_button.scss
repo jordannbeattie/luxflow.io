@@ -1,0 +1,54 @@
+/*
+ * Button
+ */
+
+@layer utilities {
+
+	// Button
+	.btn {
+
+		// Basic Classes
+		@apply block w-auto text-center transition border border-transparent rounded-none sm:inline-block focus:outline-0 focus:border-transparent;
+
+		// Sizing
+		&.btn-sm { @apply px-2 py-1 body-sm font-semibold }
+		&.btn-md { @apply px-4 py-2 body-md font-semibold }
+		&.btn-lg { @apply px-6 py-3 body-lg font-semibold }
+
+		// Filled Buttons
+		&.btn-filled {
+
+			@apply focus:ring-2;
+			
+			// Colour
+			&.btn-primary { @apply text-primary-50 bg-primary-500 hover:bg-primary-600 active:bg-primary-400 focus:ring-primary-500/25 }
+			&.btn-secondary { @apply text-secondary-50 bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-400 focus:ring-secondary-500/25 }
+			&.btn-neutral { @apply text-neutral-50 bg-neutral-500 hover:bg-neutral-600 active:bg-neutral-400 focus:ring-neutral-500/25 }
+			&.btn-light { @apply text-neutral-800 bg-neutral-50 hover:bg-neutral-100 active:bg-white focus:ring-neutral-500/25 }
+		}
+
+		// Line Buttons
+		&.btn-line {
+
+			@apply focus:ring-2;
+			
+			// Colour
+			&.btn-primary { @apply text-primary-700 bg-transparent border-2 border-primary-500 hover:border-primary-600 active:border-primary-400 focus:ring-primary-500/25 }
+			&.btn-secondary { @apply text-secondary-700 bg-transparent border-2 border-secondary-500 hover:border-secondary-600 active:border-secondary-400 focus:ring-secondary-500/25 }
+			&.btn-neutral { @apply text-neutral-700 bg-transparent border-2 border-neutral-500 hover:border-neutral-600 active:border-neutral-400 focus:ring-neutral-500/25 }
+			&.btn-light { @apply text-neutral-50 bg-transparent border-2 border-neutral-50 hover:border-neutral-100 active:border-white focus:ring-neutral-100/25 }
+		}
+
+		// Link Buttons
+		&.btn-link {
+
+			@apply p-0;
+	
+			// Colour
+			&.btn-primary { @apply text-primary-500 hover:text-primary-600 active:text-primary-400 focus:text-primary-300 }
+			&.btn-secondary { @apply text-secondary-500 hover:text-secondary-500 active:text-secondary-400 focus:text-secondary-300 }
+			&.btn-neutral { @apply text-neutral-500 hover:text-neutral-600 active:text-neutral-400 focus:text-neutral-300 }
+			&.btn-light { @apply text-neutral-50 hover:text-neutral-100 active:text-neutral-200 focus:text-white }
+		}
+	}
+}

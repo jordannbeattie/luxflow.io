@@ -1,0 +1,148 @@
+field: 64286a3d-abda-4015-acb6-fdd84a52c3e7 # Content Blocks
+fieldLayouts:
+  dcf78923-4a78-4dea-8ef7-de3ac76307ab:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a7f1cbe3-ef4b-4d57-90bd-46f142345344 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cad8632b-f23c-4ff2-ad92-0f541b292701 # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c0f79bc-8f53-4628-b786-8d430aacc874 # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d5ef908c-7b7a-4659-9415-1832594ca96e # Cards
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  8c0f79bc-8f53-4628-b786-8d430aacc874: # Buttons
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttons
+    instructions: ''
+    name: Buttons
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 6f6fae4f-e59e-4fdc-9854-ad12e2301523 # Button
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_8_buttons}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a button'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  a7f1cbe3-ef4b-4d57-90bd-46f142345344: # Headline
+    columnSuffix: bntggkbi
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cad8632b-f23c-4ff2-ad92-0f541b292701: # Copy
+    columnSuffix: pgfkibiq
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d5ef908c-7b7a-4659-9415-1832594ca96e: # Cards
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cards
+    instructions: ''
+    name: Cards
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add a card'
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: card
+name: Card
+sortOrder: 2

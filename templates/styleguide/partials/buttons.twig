@@ -1,0 +1,121 @@
+{% x:styleguide/section { headline: 'Buttons' } %}
+    <div class="flex flex-col gap-8">
+
+        {# Filled #}
+        <div class="flex flex-wrap items-baseline gap-x-8 gap-y-4">
+
+            {# Neutral Colour #}
+            {% x:button {
+                text: "Filled Button",
+                type: "filled",
+                size: "md",
+                colour: "neutral",
+            } %}
+
+            {# Primary Colour #}
+            {% x:button {
+                text: "Filled Button",
+                type: "filled",
+                size: "md",
+                colour: "primary",
+            } %}
+
+            {# Secondary Colour #}
+            {% x:button {
+                text: "Filled Button",
+                type: "filled",
+                size: "md",
+                colour: "secondary",
+            } %}
+
+        </div>
+
+        {# Line #}
+        <div class="flex flex-wrap items-baseline gap-x-8 gap-y-4">
+
+            {# Neutral Colour #}
+            {% x:button {
+                text: "Line Button",
+                type: "line",
+                size: "md",
+                colour: "neutral",
+            } %}
+
+            {# Primary Colour #}
+            {% x:button {
+                text: "Line Button",
+                type: "line",
+                size: "md",
+                colour: "primary",
+            } %}
+
+            {# Secondary Colour #}
+            {% x:button {
+                text: "Line Button",
+                type: "line",
+                size: "md",
+                colour: "secondary",
+            } %}
+
+        </div>
+
+        {# Link #}
+        <div class="flex flex-wrap items-baseline gap-x-8 gap-y-4">
+
+            {# Neutral Colour #}
+            {% x:button {
+                text: "Link Button",
+                type: "link",
+                size: "md",
+                colour: "neutral",
+            } %}
+
+            {# Primary Colour #}
+            {% x:button {
+                text: "Link Button",
+                type: "link",
+                size: "md",
+                colour: "primary",
+            } %}
+
+            {# Secondary Colour #}
+            {% x:button {
+                text: "Link Button",
+                type: "link",
+                size: "md",
+                colour: "secondary",
+            } %}
+
+        </div>
+
+        {# Size #}
+        <div class="flex flex-wrap items-baseline gap-x-8 gap-y-4">
+
+            {# Small Button #}
+            {% x:button {
+                text: "Small Button",
+                type: "filled",
+                size: "sm",
+                colour: "neutral",
+            } %}
+
+            {# Medium Button #}
+            {% x:button {
+                text: "Medium Button",
+                type: "filled",
+                size: "md",
+                colour: "neutral",
+            } %}
+
+            {# Large Button #}
+            {% x:button {
+                text: "Large Button",
+                type: "filled",
+                size: "lg",
+                colour: "neutral",
+            } %}
+
+        </div>
+
+    </div>
+{% endx:styleguide/section %}

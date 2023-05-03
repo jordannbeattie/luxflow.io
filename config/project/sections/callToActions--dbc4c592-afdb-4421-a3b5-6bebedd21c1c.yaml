@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: callToActions
+name: 'Call To Actions'
+propagationMethod: all
+siteSettings:
+  d6d70c7a-a269-4189-b17f-d94d3f2d788c: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

@@ -1,0 +1,6 @@
+{% if media is defined and media is not empty %}
+    <video muted controls class="{{ class ?? '' }}" poster="{{ media.url }}">
+        <source src="{{ media.url }}" type="video/mp4"/>
+        Your browser does not support the video tag.
+    </video>
+{% endif %}

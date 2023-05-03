@@ -1,0 +1,60 @@
+{% if 
+    (contact['facebook'] is defined and contact['facebook'] is not empty) or 
+    (contact['twitter'] is defined and contact['twitter'] is not empty) or 
+    (contact['instagram'] is defined and contact['instagram'] is not empty) or 
+    (contact['linkedin'] is defined and contact['linkedin'] is not empty) or 
+    (contact['youtube'] is defined and contact['youtube'] is not empty) 
+%}
+
+    {% set iconClass = iconClass ?? 'w-6 h-6 lg:w-6 lg:h-6 transition text-secondary-400 hover:text-secondary-500' %}
+
+    <div class="flex flex-wrap items-center gap-4 mt-8 lg:mt-12">
+
+        {% if contact['facebook'] is defined and contact['facebook'] is not empty %}
+            <a href="{{ contact.facebook }}" target="_blank">
+                {% x:icon {
+                    name: 'facebook',
+                    class: iconClass
+                } %}
+            </a>
+        {% endif %}
+
+        {% if contact['twitter'] is defined and contact['twitter'] is not empty %}
+            <a href="{{ contact.twitter }}" target="_blank">
+                {% x:icon {
+                    name: 'twitter', 
+                    class: iconClass
+                } %}
+            </a>
+        {% endif %}
+
+        {% if contact['instagram'] is defined and contact['instagram'] is not empty %}
+            <a href="{{ contact.instagram }}" target="_blank">
+                {% x:icon {
+                    name: 'instagram', 
+                    class: iconClass
+                } %}
+            </a>
+        {% endif %}
+
+        {% if contact['linkedin'] is defined and contact['linkedin'] is not empty %}
+            <a href="{{ contact.linkedin }}" target="_blank">
+                {% x:icon {
+                    name: 'linkedin', 
+                    class: iconClass
+                } %}
+            </a>
+        {% endif %}
+
+        {% if contact['youtube'] is defined and contact['youtube'] is not empty %}
+            <a href="{{ contact.youtube }}" target="_blank">
+                {% x:icon {
+                    name: 'youtube', 
+                    class: iconClass
+                } %}
+            </a>
+        {% endif %}
+        
+    </div>
+
+{% endif %}

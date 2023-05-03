@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: homepage
+name: Homepage
+propagationMethod: all
+siteSettings:
+  d6d70c7a-a269-4189-b17f-d94d3f2d788c: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/default
+    uriFormat: __home__
+type: single

@@ -1,0 +1,9 @@
+baseUrl: $SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: en-GB
+name: $SITE_NAME
+primary: true
+siteGroup: adc3ce14-b18c-4644-b669-727364548afd # $SITE_NAME
+sortOrder: 1

@@ -1,0 +1,28 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1e6503ce-1874-499c-ac7a-3b92d3d0292a # Common
+handle: buttons
+instructions: ''
+name: Buttons
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 941b54ca-fa78-4aba-a0e7-c8ea0b9ee389 # Button
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_buttons}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: 'Add a button'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField
